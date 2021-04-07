@@ -1,0 +1,297 @@
+/*
+
+File Name: style.css
+Date: 2/25/2021
+Programmer: Deana Jackson
+
+*/
+
+@import 'palette.less';
+@import 'mixins.less';
+
+/* Global Styling*/
+
+
+/* MOBILE STYLESHEET */
+@media only screen and (min-width: 200px) {
+    body {
+        background-color: @color2;
+        font-family: 'Shippori Mincho', serif;
+    }
+
+    header {
+        background-color: @color2;
+        .addDropShadow();
+
+        p {
+            background-color: @color1;
+            text-align: center;
+            color: @lightColor;
+            padding: .5em 0;
+            font-size: .7em;
+        }
+
+        a {
+            &:link {
+                color: @lightColor;
+            }
+
+            &:visited {
+                color: @lightColor;
+            }
+        }
+    }
+
+    .navbar {
+        margin-bottom: 0;
+    }
+
+    nav {
+        font-family: 'Shippori Mincho', serif;
+
+        .navbar-header {
+            .addDropShadow();
+
+            .navbar-brand {
+                font-family: 'RocknRoll One', sans-serif;
+                font-size: 1.7em;
+                background-color: @lightColor;
+                color: @color1;
+
+
+                &:link {
+                    .noTextDeco;
+                }
+
+                &:visited {
+                    .noTextDeco;
+                }
+
+                &:hover {
+                    .noTextDeco;
+                    background-color: @lightColor;
+                }
+            }
+        }
+
+
+        .navbar-collapse {
+            background-color: @darkColor3;
+            .addDropShadow();
+
+            .navbar-nav {
+                background-color: @darkColor3;
+                text-align: center;
+
+                li {
+                    a {
+                        font-family: 'RocknRoll One', sans-serif;
+                        color: @lightColor  !important;
+
+                        &:link {
+                            .noTextDeco;
+                        }
+
+                        &:visited {
+                            .noTextDeco;
+                        }
+
+                        &:hover {
+                            .noTextDeco;
+                            background-color: @color3;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        background-color: @lightColor2;
+        margin: 0 1em;
+        padding: .5em;
+        .addDropShadow();
+
+        h2 {
+            font-family: 'RocknRoll One', sans-serif;
+            color: @darkColor3;
+            font-size: 1.1em;
+
+        }
+
+        p {
+            color: @darkColor1;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+
+        li {
+            font-size: 1.5em;
+            margin: 1em 0;
+            padding: .4em;
+            color: @color1;
+            font-weight: 800;
+            .roundedBoxCorners(8px; @color2; );
+            .addDropShadow;
+        }
+    }
+
+    .desktop-on {
+        display: none;
+    }
+
+    footer {
+        .addDropShadow();
+        .addMargin;
+        font-family: 'RocknRoll One', sans-serif;
+        background-color: @darkColor3;
+        text-align: center;
+
+        figcaption,
+        p {
+            color: @lightColor;
+            margin: .5em;
+            padding: .5em 1em 1em 1em;
+            font-size: .9em;
+
+            a {
+                &:link {
+                    color: @lightColor;
+                    .noTextDeco;
+                }
+
+                &:visited {
+                    color: @lightColor;
+                    .noTextDeco;
+                }
+            }
+        }
+
+        ul {
+            padding: 1em 1em .5em 1em;
+
+            li {
+                display: inline;
+                padding: 0 .5em;
+                font-size: .9em;
+
+                a {
+                    &:link {
+                        color: @lightColor;
+                        .noTextDeco;
+                    }
+
+                    &:visited {
+                        color: @lightColor;
+                        .noTextDeco;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+/*
+
+TABLET STYLESHEET
+
+The following CSS affects all screen sizes larger than 480 pixels wide.
+
+*/
+
+@media only screen and (min-width: 481px) {
+    footer {
+        img {
+            .addDropShadow();
+            .roundedBoxCorners(20px; );
+        }
+    }
+}
+
+/*
+
+DESKTOP STYLESHEET
+
+The following CSS affects all screen sizes larger than 1024 pixels wide.
+
+*/
+
+@media only screen and (min-width: 1025px) {
+    nav {
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    header {
+        display: grid;
+        grid-template-rows: auto auto;
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .desktop-off {
+        display: none;
+    }
+
+    main {
+
+        display: grid;
+        grid-template-columns: 75% 25%;
+
+        * {
+            margin: .1em 0;
+        }
+
+        #text-content {
+            padding: .5em 3em;
+            background-color: @lightColor2;
+        }
+
+
+    }
+
+    .desktop-on {
+        display: block;
+    }
+
+    figure {
+        align-content: center;
+        padding: .5em;
+
+        img {
+            padding: 1em 3.1em;
+        }
+
+        a {
+            .roundedBoxCorners(10px; @color1);
+            .addDropShadow();
+            text-align: center;
+            color: @lightColor;
+            padding: .5em;
+            font-size: .8em;
+
+            &:link {
+                color: @lightColor;
+                .noTextDeco;
+            }
+
+            &:visited {
+                color: @lightColor;
+                .noTextDeco;
+            }
+
+            &:hover {
+                color: @lightColor;
+                .noTextDeco;
+            }
+        }
+    }
+}

@@ -1,0 +1,87 @@
+/* Parametric mixin for headings */
+
+.headingStyle(@paramColor: #2C3F8F; @paramSize: 2em; ) {
+    color: @paramColor; // this accepts a font color passed through as an argument
+    font-size: @paramSize; // this accepts a font size passed through as an argument
+    font-weight: bold; // this is static code... not everything has to be dynamic!
+    line-height: @paramSize; // this reuses the same font size as before to change line height
+    margin-top: @paramSize / 2;
+    margin-bottom: @paramSize / 2;
+    text-transform: uppercase;
+}
+
+/* End parametric mixin for headings */
+
+.roundedBoxCorners(@borderRadius: 5px; @bgColor: #2C3F8F; ) {
+    border-radius: @borderRadius;
+    background-color: @bgColor;
+
+}
+
+.addDropShadow(@x: 2px; @y: 2px; @blur: 5px; @alpha: 25%; ) {
+    box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+}
+
+.gradient(@paramDirection: top; @paramColor1: #CCC; @paramColor2: #AAA) {
+    background: @paramColor1;
+    /* For browsers that do not support gradients */
+    background: -o-linear-gradient(@paramDirection, @paramColor1, @paramColor2);
+    background: -moz-linear-gradient(@paramDirection, @paramColor1, @paramColor2);
+    background: linear-gradient(to @paramDirection, @paramColor1, @paramColor2);
+}
+
+.expand() {
+    transform: scale(1.1);
+    display: inline-block;
+}
+
+.fade() {
+    //A mixin which makes a CSS element 50% transparent
+    opacity: 0.5;
+}
+
+.underlineItalicized() {
+    //A mixin which makes a CSS element's text underlined and italicized
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.uppercaseBold() {
+    //A mixin which makes a CSS element's text uppercase and bold
+    font-weight: bold;
+    text-transform: uppercase
+}
+
+.flipImage() {
+    //A mixin which makes an image flip
+    transform: scaleX(-1);
+}
+
+.noTextDeco() {
+    text-decoration: none;
+}
+
+.addPadding() {
+    padding: 2px;
+}
+
+
+.addMargin() {
+    margin: 1em 0 1em 0;
+}
+
+.addRidgeBorder() {
+    border-bottom: 5px solid;
+    border-style: ridge;
+    border-color: @color4;
+}
+
+.addLRPadding() {
+    padding-left: 250px;
+    padding-right: 250px;
+}
+
+.addTBPadding() {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
